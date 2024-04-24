@@ -2,12 +2,12 @@ let g:vimwiki_global_ext = 0
 let g:vim_wiki_set_path = expand('<sfile>:p:h')
 let g:vimwiki_list = [
         \{
-        \   'path': '~/dfdrdodm95.github.io/_wiki/',
+        \   'path': '~/dfdrdodm95.github.io/_wiki',
         \   'ext': 'md',
         \   'diary_rel_path': '.',
         \},
         \{
-        \   'path': '~/_wiki/',
+        \   'path': '~/_wiki',
         \   'ext': 'md',
         \   'diary_rel_path': '.',
         \},
@@ -42,7 +42,7 @@ function! NewTemplate()
     let l:wiki_directory = v:false
 
     for wiki in g:vimwiki_list
-        if expand('%:p:h') . '/' == expand(wiki.path)
+        if expand('%:p:h') . '/' =~ expand(wiki.path)
             let l:wiki_directory = v:true
             break
         endif
